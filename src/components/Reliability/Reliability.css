@@ -1,0 +1,314 @@
+/* Reliability Section Styles */
+.reliability-section {
+  width: 100%;
+  padding: 120px 0;
+  background: #000000;
+  position: relative;
+}
+
+.reliability-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Header Styles */
+.reliability-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.reliability-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.reliability-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Styles */
+.reliability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Custom Card Styles */
+.custom-card {
+  width: 100%;
+  height: 200px; /* 16:9 aspect ratio for 320px width */
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.custom-card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.custom-card-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-card-inner:hover {
+  transform: scale(0.98);
+}
+
+/* Card Content */
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-container {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 255, 117, 0.2), rgba(55, 0, 255, 0.2));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 255, 117, 0.3);
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+  color: #00ff75;
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-stats {
+  margin-top: 8px;
+}
+
+.stats-number {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #00ff75;
+  line-height: 1;
+}
+
+.stats-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .reliability-container {
+    padding: 0 32px;
+  }
+  
+  .reliability-grid {
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .custom-card {
+    height: 180px;
+  }
+  
+  .custom-card-inner {
+    padding: 20px;
+  }
+  
+  .card-content {
+    gap: 16px;
+  }
+  
+  .icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-description {
+    font-size: 12px;
+  }
+  
+  .stats-number {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reliability-section {
+    padding: 80px 0;
+  }
+  
+  .reliability-container {
+    padding: 0 20px;
+  }
+  
+  .reliability-header {
+    margin-bottom: 60px;
+  }
+  
+  .reliability-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+  }
+  
+  .custom-card {
+    height: 160px;
+  }
+  
+  .custom-card-inner {
+    padding: 18px;
+  }
+  
+  .card-content {
+    gap: 14px;
+  }
+  
+  .reliability-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reliability-section {
+    padding: 60px 0;
+  }
+  
+  .reliability-header {
+    margin-bottom: 40px;
+  }
+  
+  .reliability-grid {
+    gap: 16px;
+  }
+  
+  .custom-card {
+    height: 140px;
+  }
+  
+  .custom-card-inner {
+    padding: 16px;
+  }
+  
+  .card-content {
+    gap: 12px;
+  }
+  
+  .icon-container {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .card-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+  }
+  
+  .card-description {
+    font-size: 11px;
+    -webkit-line-clamp: 1;
+  }
+  
+  .stats-number {
+    font-size: 16px;
+  }
+  
+  .stats-subtitle {
+    font-size: 10px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .custom-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .custom-card,
+  .custom-card-inner {
+    transition: none;
+  }
+}

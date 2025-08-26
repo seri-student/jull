@@ -1,0 +1,345 @@
+/* Hero Section Styles */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 120px 0 80px 0;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 60px;
+}
+
+.hero-text {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.hero-badge:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.badge-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3B82F6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Animation Container Styles */
+.hero-badge-container,
+.hero-title-container,
+.hero-description-container,
+.hero-actions-container,
+.client-showcase-container {
+  width: 100%;
+}
+
+.hero-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-description-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-actions-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero Title */
+.hero-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-title-accent {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+/* Hero Description */
+.hero-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  max-width: 600px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.hero-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 90vh;
+    padding: 100px 0 60px 0;
+  }
+  
+  .hero-container {
+    padding: 0 20px;
+  }
+  
+  .hero-content {
+    gap: 40px;
+  }
+  
+  .hero-text {
+    gap: 24px;
+  }
+  
+  .hero-badge {
+    padding: 10px 20px;
+  }
+  
+  .badge-text {
+    font-size: 13px;
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .hero-title-accent {
+    /* Use solid color on mobile for better visibility */
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: #3B82F6;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .hero-description {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 18px 24px;
+    font-size: 16px;
+    min-height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 85vh;
+    padding: 90px 0 50px 0;
+  }
+  
+  .hero-container {
+    padding: 0 16px;
+  }
+  
+  .hero-content {
+    gap: 32px;
+  }
+  
+  .hero-text {
+    gap: 20px;
+  }
+  
+  .hero-badge {
+    padding: 8px 16px;
+  }
+  
+  .badge-text {
+    font-size: 12px;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .hero-description {
+    font-size: clamp(0.85rem, 4.5vw, 1rem);
+  }
+  
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    padding: 16px 20px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    padding: 80px 0 40px 0;
+  }
+  
+  .hero-container {
+    padding: 0 12px;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.6rem, 10vw, 2.2rem);
+  }
+  
+  .hero-description {
+    font-size: clamp(0.8rem, 5vw, 0.95rem);
+  }
+  
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    padding: 14px 18px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge,
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    transition: none;
+  }
+  
+  .hero-badge:hover,
+  .hero-cta-primary:hover,
+  .hero-cta-secondary:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .hero-title {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  }
+  
+  .hero-title-accent {
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+  }
+  
+  .hero-description {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .hero-badge {
+    background: rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.8);
+  }
+}

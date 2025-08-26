@@ -1,0 +1,148 @@
+/* Gallery Showcase Styles */
+.gallery-showcase {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.gallery-showcase-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.gallery-showcase-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.gallery-showcase-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.gallery-showcase-gradient-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 128px;
+  background: linear-gradient(to right, #000000, transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gallery-showcase-gradient-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 128px;
+  background: linear-gradient(to left, #000000, transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 32px;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Gallery Card Styles */
+.gallery-card {
+  flex-shrink: 0;
+  width: auto;
+}
+
+.gallery-image {
+  height: 200px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-showcase {
+    padding: 60px 0;
+  }
+  
+  .gallery-showcase-container {
+    padding: 0 20px;
+  }
+  
+  .gallery-showcase-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 32px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  }
+  
+  .gallery-track {
+    gap: 20px;
+  }
+  
+  .gallery-image {
+    height: 140px;
+  }
+  
+  .gallery-showcase-gradient-left,
+  .gallery-showcase-gradient-right {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-showcase {
+    padding: 48px 0;
+  }
+  
+  .gallery-image {
+    height: 120px;
+  }
+  
+  .gallery-showcase-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+}
+
+@media (max-width: 320px) {
+  .gallery-showcase {
+    padding: 40px 0;
+  }
+  
+  .gallery-showcase-container {
+    padding: 0 16px;
+  }
+  
+  .gallery-image {
+    height: 100px;
+  }
+  
+  .gallery-showcase-title {
+    font-size: clamp(1.4rem, 8vw, 2rem);
+    margin-bottom: 24px;
+  }
+}
+
+/* Pause animation on hover */
+.gallery-showcase-wrapper:hover .gallery-track {
+  animation-play-state: paused;
+}

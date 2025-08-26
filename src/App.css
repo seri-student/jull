@@ -1,0 +1,206 @@
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize for animations and ensure proper stacking */
+*,
+*::before,
+*::after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.App {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #000000;
+  position: relative;
+  z-index: 1;
+}
+
+/* Global Button and Form Reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid rgba(26, 26, 46, 0.8);
+  outline-offset: 2px;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* Link Styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.8);
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background: rgba(26, 26, 46, 0.8);
+  color: #ffffff;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 26, 46, 0.8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 26, 46, 1);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Enhanced Focus States for Accessibility */
+.nav-link:focus-visible,
+.hero-cta-primary:focus-visible,
+.hero-cta-secondary:focus-visible,
+.mobile-menu-toggle:focus-visible {
+  outline: 2px solid rgba(26, 26, 46, 0.8);
+  outline-offset: 2px;
+}
+
+/* Cookie Banner Specific Styles */
+.cookie-banner-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Legal Pages Specific Styles */
+.legal-page {
+  line-height: 1.7;
+}
+
+.legal-page h1,
+.legal-page h2,
+.legal-page h3 {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.legal-page h1:first-child,
+.legal-page h2:first-child {
+  margin-top: 0;
+}
+
+.legal-page p {
+  margin-bottom: 1rem;
+}
+
+.legal-page ul,
+.legal-page ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.legal-page li {
+  margin-bottom: 0.5rem;
+}
+
+/* Animation Performance Optimizations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .hero-content,
+  .video-showcase,
+  .testimonials-section,
+  .gallery-showcase,
+  .why-choose-me {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .hero-content,
+  .video-showcase,
+  .testimonials-section,
+  .gallery-showcase,
+  .why-choose-me {
+    will-change: auto;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .bg-gray-900\/50 {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  .border-gray-700 {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  .text-gray-200,
+  .text-gray-300,
+  .text-gray-400 {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
