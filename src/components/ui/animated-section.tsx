@@ -34,16 +34,19 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   const prefersReducedMotion = typeof window !== 'undefined' && 
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Check if we're on mobile and should disable animations
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const shouldDisableAnimation = disabled || prefersReducedMotion || isMobile;
   const getAnimationStyles = (): CSSProperties => {
     const baseStyles: CSSProperties = {
-      transition: prefersReducedMotion 
+      transition: shouldDisableAnimation 
         ? 'none' 
         : `all ${duration}s cubic-bezier(0.4, 0, 0.2, 1)`,
-      transitionDelay: prefersReducedMotion ? '0s' : `${delay}s`,
-      willChange: prefersReducedMotion ? 'auto' : 'transform, opacity',
+      transitionDelay: shouldDisableAnimation ? '0s' : `${delay}s`,
+      willChange: shouldDisableAnimation ? 'auto' : 'transform, opacity',
     };
 
-    if (prefersReducedMotion) {
+    if (shouldDisableAnimation) {
       return {
         ...baseStyles,
         opacity: 1,

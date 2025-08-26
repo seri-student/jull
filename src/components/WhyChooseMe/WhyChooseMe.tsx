@@ -12,6 +12,7 @@ export const WhyChooseMe: React.FC = () => {
             animationType="fadeUp" 
             delay={0.2} 
             duration={0.8}
+            disabled={typeof window !== 'undefined' && window.innerWidth < 768}
             className="text-center mb-12 md:mb-16"
           >
             <div className="text-center mb-12 md:mb-16">
@@ -30,13 +31,14 @@ export const WhyChooseMe: React.FC = () => {
               const IconComponent = feature.icon;
               
               return (
-                <AnimatedSection
-                  key={feature.id}
-                  animationType="scaleIn"
-                  delay={0.4 + (index * 0.2)}
-                  duration={0.8}
-                  className="w-full max-w-sm"
-                >
+                <div key={feature.id} className="w-full max-w-sm">
+                  <AnimatedSection
+                    animationType="scaleIn"
+                    delay={0.4 + (index * 0.2)}
+                    duration={0.8}
+                    disabled={typeof window !== 'undefined' && window.innerWidth < 768}
+                    className="w-full"
+                  >
                   <GlowCard
                     glowColor={feature.glowColor}
                     customSize={true}
@@ -73,7 +75,8 @@ export const WhyChooseMe: React.FC = () => {
                       </div>
                     </div>
                   </GlowCard>
-                </AnimatedSection>
+                  </AnimatedSection>
+                </div>
               );
             })}
           </div>

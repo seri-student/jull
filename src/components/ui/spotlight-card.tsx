@@ -37,6 +37,10 @@ const GlowCard: React.FC<GlowCardProps> = ({
   const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Disable glow effect on mobile devices
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
       
