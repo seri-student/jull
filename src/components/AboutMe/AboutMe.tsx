@@ -14,11 +14,11 @@ const AboutMe: React.FC = () => {
             duration={1.0}
             className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0"
           >
-            <div className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0">
+            <div className="flex justify-center">
               <img 
                 src={aboutMeImage} 
                 alt="About Me" 
-                className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] rounded-full object-cover shadow-2xl border-4 border-gray-600 transform transition-transform duration-300 hover:scale-105"
+                className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px] rounded-full object-cover shadow-2xl border-4 border-gray-600 transform transition-transform duration-300 hover:scale-105 aspect-square"
               />
             </div>
           </AnimatedSection>
